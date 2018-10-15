@@ -1,0 +1,39 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:h2:~/oas;USER=sa
+ 
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop 
+  h2:
+    console:
+      enabled: true 
+  mail:
+    protocol: smtp
+    test-connection: true
+    host: {{ EMAIL SERVER }}
+    port: {{ EMAIL SERVER PORT }}
+    username: {{ EMAIL USERNAME }}
+    password: {{ EMAIL PASSWORD }}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls.enable: true
+   
+security:
+  basic:
+    enabled: true
+
+postcode:
+#  lookup: 
+#    key: {{ POSTCODE KEY }}
+#    username: {{ POSTCODE USERNAME }}
+  pcapredict:
+    username: {{ PCA PREDICT USERNAME }} 
+    capture:
+      key: {{ PCA PREDICT CAPTUR API KEY }}
+    

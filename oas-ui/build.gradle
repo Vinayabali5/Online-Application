@@ -1,0 +1,31 @@
+apply plugin: 'war'
+
+war {
+    baseName = 'oas-ui'
+    version = '0.2.6'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
+
+description = """Online Application System: User Interface"""
+
+dependencies {
+	//compile project(':oas-api')
+
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.springframework.boot:spring-boot-starter-security')
+    
+    compile('org.apache.commons:commons-lang3:3.3.2')
+    
+    compile('org.codehaus.jackson:jackson-mapper-asl:1.9.13')
+    compile('com.fasterxml.jackson.datatype:jackson-datatype-joda:2.4.0')
+    
+    compile('com.allanditzel:spring-security-csrf-token-filter:1.1')
+    
+    compile('org.springframework.boot:spring-boot-starter-test')
+}

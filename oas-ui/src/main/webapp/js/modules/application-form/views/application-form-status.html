@@ -1,0 +1,38 @@
+<div class="application-form-status-information">
+    <h1>Application Form Status</h1>
+    <p>This page displays the current status of the various sections of your application. </p>
+    <div>
+        <table class="table table-strpped">
+            <tbody>
+                <tr>
+                    <td>Application Started</td>
+                    <td>
+                        <span class="glyphicon glyphicon-ok" ng-show="status.applicationStarted"></span>
+                        <span class="glyphicon glyphicon-remove" ng-hide="status.applicationStarted"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Personal Details Complete</td>
+                    <td>
+                        <span class="glyphicon glyphicon-ok" ng-show="status.personalDetailsStatus.complete"></span>
+                        <span class="glyphicon glyphicon-remove" ng-hide="status.personalDetailsStatus.complete"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Education History Complete</td>
+                    <td>
+                        <span class="glyphicon glyphicon-ok" ng-show="status.educationHistoryComplete"></span>
+                        <span class="glyphicon glyphicon-remove" ng-hide="status.educationHistoryComplete"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Additional Information Complete</td>
+                    <td>
+                        <span class="glyphicon glyphicon-ok" ng-show="status.additionalInformationComplete"></span>
+                        <span class="glyphicon glyphicon-remove" ng-hide="status.additionalInformationComplete"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

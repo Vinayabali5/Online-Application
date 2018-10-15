@@ -1,0 +1,35 @@
+<ul class="nav navbar-nav navmenu-home" role="tablist" ng-show="loggedIn">
+    <li ui-sref-active="active"><a ui-sref="home">Home</a></li>
+</ul>
+
+<ul class="nav navbar-nav navmenu-logged-in-dropdown-menu" role="tablist" ng-show="loggedIn && showDropdownMenu">
+    <li class="dropdown" ui-sref-active="{'active': 'application-form.**'}">
+        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Application <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li ui-sref-active="active"><a ui-sref="application-form.personal-details">Personal Details</a></li>
+            <li ui-sref-active="active"><a ui-sref="application-form.education-details">Education Details</a></li>
+            <li ui-sref-active="active"><a ui-sref="application-form.additional-details">Additional Details</a></li>
+            <li ui-sref-active="active"><a ui-sref="application-form.status">Application Status</a></li>
+        </ul>
+    </li>
+</ul>
+
+<ul class="nav navbar-nav navmenu-logged-in-progression" role="tablist" ng-show="loggedIn">
+    <li ui-sref-active="active"><a ui-sref="application-form.personal-details">Personal Details</a></li>
+    <li ui-sref-active="active"><a ui-sref="application-form.education-details">Education History</a></li>
+    <li ui-sref-active="active"><a ui-sref="application-form.additional-details">Additional Details</a></li>
+    <li ui-sref-active="active"><a ui-sref="application-form.status">Status</a></li>
+</ul>
+
+<ul class="nav navbar-nav navmenu-logged-in" role="tablist" ng-show="loggedIn">
+    <li ui-sref-active="active" ng-class="{ disabled: !status.applicationComplete, disabled: !statusOverride }"><a ui-sref="application-submission.institution">Submit </a></li>
+</ul>
+
+<ul class="nav navbar-nav navbar-right navmenu-logged-out" role="tablist" ng-hide="loggedIn">
+    <li ui-sref-active="active"><a ui-sref="login">Login</a></li>
+    <li ui-sref-active="active"><a ui-sref="registration.newuser">Register</a></li>
+</ul>
+
+<ul class="nav navbar-nav navbar-right navmenu-logged-in-logout" role="tablist" ng-show="loggedIn">
+    <li ui-sref-active="active"><a ui-sref="logout">Log Out</a></li>
+</ul>

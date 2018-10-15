@@ -1,0 +1,26 @@
+# This file contains the default setting for a development environment. 
+# These setting should not be changed
+
+
+spring:
+  datasource:
+    name: primary
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    initialize: false
+    tomcat:
+      initialSize: 10
+      maxActive: 100
+      maxIdle: 5
+      minIdle: 5
+      test-on-borrow: true
+      validation-query: SELECT 1    
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServer2008Dialect
+    hibernate:
+      naming:
+        strategy: org.springframework.boot.orm.jpa.hibernate.SpringNamingStrategy
+      ddl-auto: validate
+  data: 
+    jpa: 
+      repositories.enabled: true
+

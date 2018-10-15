@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="node_modules/|src/main/resources/config/|src/main/groovy/uk/ac/reigate/security/|src/main/webapp/resources/|src/main/groovy/uk/ac/|src/main/groovy/uk/|src/main/groovy/" kind="src" path=""/>
+	<classpathentry kind="src" path="src/main/groovy"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

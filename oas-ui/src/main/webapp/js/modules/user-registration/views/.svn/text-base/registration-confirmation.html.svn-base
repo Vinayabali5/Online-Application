@@ -1,0 +1,37 @@
+<p>
+    Welcome {{ ctrl.info.firstName }} {{ ctrl.info.surname }}. You need to enter a password below to complete your user account registration
+</p>
+<form class="form-horizontal" name="registrationConfirmation" ng-submit="ctrl.completeRegistration()" role="form">
+    <div class="form-group">
+        <label class="col-md-1 col-md-offset-2" for="email">Email Address</label>
+        <div class="col-md-3">
+            <input class="form-control" type="email" name="email" placeholder="john.doe@example.com" required ng-model="ctrl.confirmation.confirmUsername" />
+        </div>
+        <div class="col-md-4">
+            <p class="help-block">Please re-enter the email address that you signed up with. This is an extra confirmation step to ensure the correct person in completing the registration.</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-1 col-md-offset-2" for="password">Password</label>
+        <div class="col-md-3">
+            <input class="form-control" type="password" name="password" placeholder="Enter Password" required ng-model="ctrl.confirmation.password" />
+        </div>
+        <div class="col-md-4">
+            <p class="help-block">Please enter a password. It is recommended that this password is at least 8 character long and contains at least 1 of each of the following: uppercase letter, lowercase letters and number.</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-1 col-md-offset-2" for="password-confirmation">Password Confirmation</label>
+        <div class="col-md-3">
+            <input class="form-control" type="password" name="password-confirmation" placeholder="Repeat Password" required ng-model="ctrl.confirmation.repeatPassword" />
+        </div>
+        <div class="col-md-4">
+            <p class="help-block">Please re-enter the password above to confirm that you have entered this correctly.</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-12">
+            <button class="btn btn-primary" type="submit" name="button" ng-disabled="registrationConfirmation.$invalid || vm.submitted">Complete Registration</button>
+        </div>
+    </div>
+</form>

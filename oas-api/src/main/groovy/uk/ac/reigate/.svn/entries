@@ -1,0 +1,86 @@
+10
+
+dir
+109
+svn://bugs.reigate.ac.uk/svn/oas/oas-api/trunk/src/main/groovy/uk/ac/reigate
+svn://bugs.reigate.ac.uk/svn/oas
+
+
+
+2018-04-20T15:51:17.822099Z
+109
+mike.horgan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+99e0dbeb-da1f-4eed-bc92-43a058f9a0f2
+
+OnlineApplications.groovy
+file
+
+
+
+
+2018-04-25T14:53:53.657803Z
+3e443579f1a4c6da7664ba4a6f926ebe
+2018-03-22T16:19:14.445778Z
+95
+mike.horgan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3668
+
+utils
+dir
+
+exceptions
+dir
+
+services
+dir
+
+exceptionhandling
+dir
+
+config
+dir
+
+dto
+dir
+
+filters
+dir
+
+api
+dir
+

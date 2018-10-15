@@ -1,0 +1,135 @@
+<h1>Personal Details</h1>
+<p>This section is to collect your personal details.</p>
+<form name="personalDetailsForm" class="form">
+    <!-- Personal Details -->
+    <div class="row">
+
+        <!-- Personal Details -->
+        <div class="form-group col-sm-12">
+            <fieldset>
+                <legend>Personal Details</legend>
+            </fieldset>
+        </div>
+        <div class="form-group col-md-6 col-sm-12">
+            <div class="form-group">
+                <label for="title" class="col-sm-4 control-label">Title:</label>
+                <div class="col-sm-8 col-sm-8">
+                    <title-selection class="form-control" ng-read-only="application.locked" ng-model="application.title"></title-selection>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="legalFirstName" class="col-sm-4 control-label">Legal First Name:</label>
+                <div class="col-sm-8 col-sm-8">
+                    <input class="form-control" placeholder="Legal First Name" ng-read-only="application.locked" ng-model="application.legalFirstName" name="legalFirstName" minlength="2" type="text"></input>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="middleNames" class="col-sm-4 control-label">Middle Name(s):</label>
+                <div class="col-sm-8 col-sm-8">
+                    <input class="form-control" placeholder="Middle Name(s)" ng-read-only="application.locked" ng-model="application.middleNames" name="middleNames" minlength="2" type="text"></input>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="surname" class="col-sm-4 control-label">Surname:</label>
+                <div class="col-sm-8 col-sm-8">
+                    <input class="form-control" type="text" name="surname" minlength="2" placeholder="Surname" ng-read-only="application.locked" ng-model="application.legalSurname"></input>
+                </div>
+            </div>
+
+            <div class="form-group hidden">
+                <label for="preferredName" class="col-sm-4 control-label">Preferred Name:</label>
+                <div class="col-sm-8 col-sm-8">
+                    <input class="form-control" type="text" name="preferredName" minlength="2" placeholder="Preferred Name" ng-read-only="application.locked" ng-model="application.preferredName"></input>
+                </div>
+            </div>
+
+            <div class="form-group hidden">
+                <label for="previousSurname" class="col-sm-4 control-label">Previous Surname:</label>
+                <div class="col-sm-8 col-sm-8">
+                    <input class="form-control" type="text" name="previousSurname" minlength="2" placeholder="Previous Surname" ng-read-only="application.locked" ng-model="application.previousSurname"></input>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="dob" class="col-sm-4 control-label">Date of Birth:</label>
+                <div class="col-sm-8 col-sm-8">
+                    <div class="input-group">
+                        <input class="form-control" type="text" uib-datepicker-popup="{{ datePickerOptions.format }}" datepicker-options="datePickerOptions" ng-read-only="application.locked" ng-model="application.dateOfBirth" ng-focus="dobOpen = !dobOpen" is-open="dobOpen" ng-required="true"
+                            close-text="Close" />
+                        <span class="input-group-btn">
+                              <button type="button" class="btn btn-default" ng-click="dobOpen = !dobOpen"><span class="glyphicon glyphicon-calendar"></span></button>
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="gender" class="col-sm-4 control-label">Gender:</label>
+                <div class="col-sm-8 col-sm-8">
+                    <gender-selection class="form-control" ng-read-only="application.locked" ng-model="application.genderId" required="true"></gender-selection>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="home" class="col-sm-4 control-label">Home Telephone:</label>
+                <div class="col-sm-8 col-sm-8">
+                    <input class="form-control left phone-group" type="tel" name="home" placeholder="Home Telephone" ng-read-only="application.locked" ng-model="application.home"></input>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="mobile" class="col-sm-4 control-label">Mobile Telephone:</label>
+                <div class="col-sm-8 col-sm-8">
+                    <input class="form-control left phone-group" type="tel" name="mobile" placeholder="Mobile Telephone" ng-read-only="application.locked" ng-model="application.mobile"></input>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="col-sm-4 control-label">Student Email:</label>
+                <div class="col-sm-8 col-sm-8">
+                    <input class="form-control" type="email" name="email" placeholder="Student Email" ng-read-only="application.locked" ng-model="application.email"></input>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="nationality" class="col-sm-4 control-label">Nationality:</label>
+                <div class="col-sm-8 col-sm-8">
+                    <nationality-selection class="form-control" ng-read-only="application.locked" ng-model="application.nationality"></nationality-selection>
+                </div>
+            </div>
+        </div>
+
+        <!-- Address Details -->
+        <address-details class="form-group col-md-6 col-sm-12" address="application.address" is-required="true"></address-details>
+
+        <!-- Sibling Details -->
+        <!-- <sibling-details class="form-group col-md-6 col-sm-12" application="application"></sibling-details> -->
+    </div>
+
+    <!-- Correspondence Details -->
+    <div class="row">
+        <div class="form-group col-sm-12">
+            <fieldset>
+                <legend>Correspondence Details</legend>
+            </fieldset>
+        </div>
+        <!-- Contact 1 -->
+        <contact-details class="form-group col-md-6 col-sm-12" contact="application.contacts[0]" label="Contact 1"></contact-details>
+        <!-- Contact 2 -->
+        <contact-details class="form-group col-md-6 col-sm-12" contact="application.contacts[1]" label="Contact 2"></contact-details>
+    </div>
+
+    <!-- Buttons -->
+    <div class="row" ng-show="false">
+        <div class="form-group col-sm-12">
+            <button type="submit" class="btn btn-primary" ng-click="save()" ng-disabled="personalDetailsForm.$invalid">Save</button>
+            <button type="submit" class="btn btn-default" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+
+</form>

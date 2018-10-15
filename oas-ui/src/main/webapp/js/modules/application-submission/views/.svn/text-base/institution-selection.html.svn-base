@@ -1,0 +1,45 @@
+<div ng-form="intitutionForm">
+    <h2>Select Institution(s)</h2>
+    <div class="row">
+        <div class="col-md-6" ng-repeat="submission in submissions">
+            <div class="form-group col-md-12 institution">
+                <div class="checkbox">
+                    <label for="{{ submission.institution.alias }}Selected" class="control-label">
+                    <input type="checkbox" name="{{ submission.institution.alias }}Selected" ng-model="submission.institution.selected" /> {{ submission.institution.name }}
+                </label>
+                </div>
+            </div>
+            <div class="col-md-12 institution-course-selection" ng-show="submission.institution.selected">
+                <div class="row">
+                    <div class="col-md-12" ng-bind-html="submission.institution.courseSelectionText"></div>
+                </div>
+                <div class="row">
+                    <div class="form-group" ng-repeat="selectedCourse in submission.selectedCourses">
+                        <label for="{{ submission.institution.alias }}Course{{ $index }}" class="col-sm-3 control-label">Select the course<span ng-hide="{{ $index < submission.institution.minCourses }}"> (optional)</span>:</label>
+                        <div class="col-sm-9">
+                            <course-selector name="{{ submission.institution.alias }}Course{{ $index }}" ng-model="selectedCourse.course" courses="submission.institution.availableCourses" ng-required="{{ $index < submission.institution.minCourses }}"></course-selector>
+                        </div>
+                        <span class="col-md-8 col-md-offset-3 error" ng-show="intitutionForm[submission.institution.alias + 'Course' + $index].$invalid">You need to select a course. Start typing to search for options.</span>
+                        <div class="col-md-12" ng-show="debug && fullDebug">
+                            <pre>{{ intitutionForm[submission.institution.alias + 'Course' + $index] | json }}</pre>
+                            <pre>{{ submission.institution.alias + 'Course' + $index }} Valid: {{ intitutionForm[submission.institution.alias + 'Course' + $index].$valid }}</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button" name="button" ng-click="submit()">Submit</button>
+        </div>
+    </div>
+    <!-- Debug Info -->
+    <div class="row" ng-show="debug">
+        <div class="col-md-12">
+            <pre>{{ submissions | json }}</pre>
+        </div>
+    </div>
+</div>

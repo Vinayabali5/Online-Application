@@ -1,0 +1,20 @@
+<table class="table table-stripped">
+    <thead>
+        <th>Subject and Level</th>
+        <th>Grade Pass/Predicted</th>
+        <th>Year of Examination</th>
+        <th>Actions</th>
+    </thead>
+    <tbody>
+        <tr ng-repeat="predictedGrade in predictedGrades">
+            <td>{{ predictedGrade.qualification.title }}</td>
+            <td>{{ predictedGrade.grade }}</td>
+            <td>{{ predictedGrade.yearOfExamination }}</td>
+            <td>
+                <button type="button" class="btn btn-primary btn-sm" ng-click="edit(predictedGrade)"><span class="glyphicon glyphicon-pencil"></span> Edit</button>
+                <button type="button" class="btn btn-danger btn-sm" ng-click="remove(predictedGrade)"><span class="glyphicon glyphicon-pencil"></span> Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button type="button" name="add" class="btn btn-default" ng-click="add()">Add</button>

@@ -1,0 +1,18 @@
+jar {
+    baseName = 'oas-data'
+    version =  '0.0.1'
+}
+
+dependencies {
+    // SQL Driver Library
+//    runtime('com.microsoft.sqlserver:mssql-jdbc')
+  	compile "com.h2database:h2"
+    
+    // Spring Boot Starter Libraries
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compile 'org.springframework.boot:spring-boot-starter-security'
+    
+    // Testing framework libraries
+    compile 'org.springframework.boot:spring-boot-starter-test' 
+}
+

@@ -1,0 +1,4 @@
+<div class="typeahead-selection">
+    <input type="text" class="form-control" placeholder="Type to search" ng-model="ngModel" ng-required="isRequired" uib-typeahead="course as course.title for course in courses | filter:$viewValue" typeahead-popup-template-url="js/components/directives/course-selector/course-selector-dropdown.html"
+        typeahead-editable="false" typeahead-template-url="js/components/directives/course-selector/course-selector-dropdown-item.html">
+</div>

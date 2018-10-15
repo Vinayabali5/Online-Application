@@ -1,0 +1,28 @@
+<a class="course-summary">
+    <span ng-bind-html="match.model.title | uibTypeaheadHighlight:query"></span>
+    <div>
+        <table class="table small">
+            <tr class="text-left">
+                <td class="col-md-3">
+                    <strong>Description: </strong><br>
+                </td>
+                <td class="col-md-9" ng-bind-html="match.model.description">
+                </td>
+            </tr>
+            <tr class="text-left">
+                <td class="col-md-3">
+                    <strong>Entry Requirements: </strong><br>
+                </td>
+                <td class="col-md-9" ng-bind-html="match.model.entryRequirements | none">
+                </td>
+            </tr>
+            <tr class="text-left">
+                <td class="col-md-3">
+                    <strong>Special Requirements: </strong><br>
+                </td>
+                <td class="col-md-9" ng-bind-html="match.model.specialRequirements | none">
+                </td>
+            </tr>
+        </table>
+    </div>
+</a>

@@ -1,0 +1,69 @@
+<h1>Personal Details</h1>
+<p>This section is to collect your personal details.</p>
+<form name="personal-details-form" class="form">
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="form-group">
+                <label for="school" class="col-sm-4 control-label">Name of present or last school:</label>
+                <div class="col-sm-8 col-sm-8">
+                    <school-selection class="form-control" ng-model="application.school"></school-selection>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="schoolStartDate" class="col-sm-4 control-label">Date started at school:</label>
+                <div class="col-sm-8 col-sm-8">
+                    <div class="input-group">
+                        <input class="form-control" type="text" uib-datepicker-popup="MM/yyyy" datepicker-options="monthPickerOptions" ng-model="application.schoolStartDate" ng-focus="schoolStartDate = !schoolStartDate" is-open="schoolStartDate" ng-required="true" close-text="Close"
+                            alt-input-formats="altInputFormats" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="schoolStartDate = !schoolStartDate"><span class="glyphicon glyphicon-calendar"></span></button>
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="schoolEndDate" class="col-sm-4 control-label">Date due to complete school:</label>
+                <div class="col-sm-8 col-sm-8">
+                    <div class="input-group">
+                        <input class="form-control" type="text" uib-datepicker-popup="MM/yyyy" datepicker-options="monthPickerOptions" ng-model="application.schoolEndDate" ng-focus="schoolEndDate = !schoolEndDate" is-open="schoolEndDate" ng-required="true" close-text="Close"
+                            alt-input-formats="altInputFormats" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="schoolEndDate = !schoolEndDate"><span class="glyphicon glyphicon-calendar"></span></button>
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Current/Previous revious Education History -->
+    <div class="row">
+        <div class="col-md-12">
+            <fieldset>
+                <legend>Current/Previous Education History</legend>
+            </fieldset>
+        </div>
+        <div class="col-md-12">
+            <predicted-grades-editor predicted-grades="application.predictedGrades"></predicted-grades-editor>
+        </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="row" ng-show="false">
+        <div class="form-group col-sm-12">
+            <button type="submit" class="btn btn-primary" ng-click="save()">Save</button>
+            <button type="submit" class="btn btn-default" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+
+</form>

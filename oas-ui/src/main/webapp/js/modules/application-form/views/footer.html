@@ -1,0 +1,18 @@
+<ul class="nav navbar-nav">
+    <li><button type="button" class="btn btn-default navbar-btn" ng-click="cancel()">Cancel</button></li>
+    <li><button type="button" class="btn btn-primary navbar-btn" ng-click="save()">Save</button></li>
+    <li><button type="button" class="btn btn-primary navbar-btn" ng-click="saveAndNext()" ng-disabled="{{ !saveAndNextEnabled }}">Save &amp; Next</button></li>
+</ul>
+<ul class="nav navbar-nav navbar-right" ng-show="debug">
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Debug Data <span class="caret"></span></a>
+        <ul class="dropdown-menu debug-menu">
+            <li> Application JSON Data:
+                <pre>{{ application | json }}</pre>
+            </li>
+            <li> Application Status JSON Data:
+                <pre>{{ status | json }}</pre>
+            </li>
+        </ul>
+    </li>
+</ul>

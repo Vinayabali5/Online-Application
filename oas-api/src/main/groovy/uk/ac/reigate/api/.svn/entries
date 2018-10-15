@@ -1,0 +1,77 @@
+10
+
+dir
+109
+svn://bugs.reigate.ac.uk/svn/oas/oas-api/trunk/src/main/groovy/uk/ac/reigate/api
+svn://bugs.reigate.ac.uk/svn/oas
+
+
+
+2018-04-20T15:51:17.822099Z
+109
+mike.horgan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+99e0dbeb-da1f-4eed-bc92-43a058f9a0f2
+
+application
+dir
+
+security
+dir
+
+institution
+dir
+
+lookup
+dir
+
+AddressesApi.groovy
+file
+
+
+
+
+2018-04-25T14:53:53.642203Z
+545e099f6364306246141f4435d260df
+2018-03-22T16:19:14.445778Z
+95
+mike.horgan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8103
+
+submission
+dir
+

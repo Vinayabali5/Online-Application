@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Online Application System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="bower_components/jquery-timepicker-jt/jquery.timepicker.css" />
+    <link rel="stylesheet" href="bower_components/angular-ui-bootstrap-datetimepicker/datetimepicker.css" />
+    <!-- endbower -->
+    <link rel="stylesheet" href="css/basic.css" />
+
+    <style type="text/css">
+        [ng\:cloak],
+        [ng-cloak],
+        .ng-cloak {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body ng-app="oas">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#primary-nav" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                <a class="navbar-brand" href="#" ui-sref="site.home">OAS</a>
+            </div>
+
+            <div id="primary-nav" class="navbar-collapse collapse" ui-view="@navigation">
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- <uiview name="content"></uiview> -->
+            <div class="main-content col-sm-12" ui-view="content">
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <h3 class="center">Welcome to the Online Application.</h3>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/bootstrap-duallistbox/src/jquery.bootstrap-duallistbox.js"></script>
+    <script src="bower_components/angular-bootstrap-duallistbox/dist/angular-bootstrap-duallistbox.js"></script>
+    <script src="bower_components/ng-ckeditor/ng-ckeditor.js"></script>
+    <script src="bower_components/ckeditor/ckeditor.js"></script>
+    <script src="bower_components/bootbox/bootbox.js"></script>
+    <script src="bower_components/jquery-timepicker-jt/jquery.timepicker.js"></script>
+    <script src="bower_components/angular-jquery-timepicker/src/timepickerdirective.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-ui-bootstrap-datetimepicker/datetimepicker.js"></script>
+    <!-- endbower -->
+
+
+    <!-- angular -->
+    <script src="js/modules/site/site.module.js" type="text/javascript"></script>
+    <script src="js/modules/site/site.routes.js" type="text/javascript"></script>
+    <script src="js/modules/site/site-register.controller.js" type="text/javascript"></script>
+    <script src="js/modules/site/site-navigation.controller.js" type="text/javascript"></script>
+    <script src="js/modules/site/site-login.controller.js" type="text/javascript"></script>
+    <script src="js/modules/site/site-home.controller.js" type="text/javascript"></script>
+    <script src="js/directives/selections/selection-boxes.module.js" type="text/javascript"></script>
+    <script src="js/directives/selections/title/title.selection.js" type="text/javascript"></script>
+    <script src="js/directives/selections/gender/gender.selection.js" type="text/javascript"></script>
+    <script src="js/directives/selections/contactType/contact-type.selection.js" type="text/javascript"></script>
+    <script src="js/directives/lookups/lookups.module.js" type="text/javascript"></script>
+    <script src="js/directives/lookups/title/title.lookup.js" type="text/javascript"></script>
+    <script src="js/directives/lookups/gender/gender.lookup.js" type="text/javascript"></script>
+    <script src="js/directives/lookups/contactType/contact-type.lookup.js" type="text/javascript"></script>
+    <script src="js/components/filters/yes-no.filter.js" type="text/javascript"></script>
+    <script src="js/components/filters/telNo.filter.js" type="text/javascript"></script>
+    <script src="js/components/filters/percent.filter.js" type="text/javascript"></script>
+    <script src="js/components/filters/pagination.filter.js" type="text/javascript"></script>
+    <script src="js/components/filters/not-set.filter.js" type="text/javascript"></script>
+    <script src="js/components/filters/filters.js" type="text/javascript"></script>
+    <script src="js/components/filters/blank.filter.js" type="text/javascript"></script>
+    <script src="js/components/entities/title/title.service.js" type="text/javascript"></script>
+    <script src="js/components/entities/gender/gender.service.js" type="text/javascript"></script>
+    <script src="js/components/entities/entities-services.module.js" type="text/javascript"></script>
+    <script src="js/components/entities/contactType/contact-type.service.js" type="text/javascript"></script>
+    <script src="js/components/common/variables.js" type="text/javascript"></script>
+    <script src="js/components/common/user-settings.js" type="text/javascript"></script>
+    <script src="js/components/common/environment-config.js" type="text/javascript"></script>
+    <script src="js/components/common/constants.js" type="text/javascript"></script>
+    <script src="js/components/common/config.js" type="text/javascript"></script>
+    <script src="js/components/auth/user.service.local-storage.js" type="text/javascript"></script>
+    <script src="js/components/auth/flash.service.js" type="text/javascript"></script>
+    <script src="js/components/auth/authentication.service.js" type="text/javascript"></script>
+    <script src="js/app.dependencies.js" type="text/javascript"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+    <script src="js/app.config.js" type="text/javascript"></script>
+    <!-- endangular -->
+</body>
+
+</html>

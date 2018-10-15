@@ -1,0 +1,3 @@
+<select id="{{ id }}" class="{{class}}" placeholder="Select Gender" ng-disabled="readonly" ng-model="ngModel" ng-required="required">
+    <option ng-repeat="gender in ctrl.genders | orderBy:['description']" ng-selected="ngmodelvar == gender.id"  ng-value="{{ gender.id }}" value="{{ gender.id }}">{{ gender.description }}</option>
+</select>

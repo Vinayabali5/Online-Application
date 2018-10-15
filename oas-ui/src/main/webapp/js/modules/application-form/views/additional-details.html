@@ -1,0 +1,74 @@
+<h1>Additional Details</h1>
+<p>This section is to collect some additional information.</p>
+<form name="application-form-additional-details" class="form" ng-action="saveAdditionalDetails()">
+    <!-- Additional Details -->
+    <div class="row">
+
+        <!-- Residency Details -->
+        <div class="form-horizontal col-md-6 col-sm-12">
+            <fieldset>
+                <legend>Residency Details</legend>
+            </fieldset>
+            <div class="form-group">
+                <label for="resident" class="col-sm-6 control-label">Have you lived in the UK or the European Economic Area (EEA) for the last 3 years? {{ application.resident | yesNo }}</label>
+                <div class="col-sm-6 checkbox">
+                    <input name="resident" type="checkbox" ng-model="application.resident"></input>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="application.resident === false">
+                <label for="previousResidentCountry" class="col-sm-6 control-label">If 'No' please state which country you lived in preiously: </label>
+                <div class="col-sm-6">
+                    <input class="form-control" type="text" name="previousResidentCountry" minlength="2" placeholder="Previous Resident Country" ng-model="application.previousResidentCountry"></input>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="application.resident === false">
+                <label for="enteredCountryForEducation" class="col-sm-6 control-label">Have you come to this country with the purpose of taking full-time education? {{ application.enteredCountryForEducation | yesNo }}</label>
+                <div class="col-sm-6">
+                    <input class="form-control" name="enteredCountryForEducation" type="checkbox" ng-model="application.enteredCountryForEducation"></input>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="application.resident === false">
+                <label for="dateOfEntry" class="col-sm-6 control-label">Date of entry into UK:</label>
+                <div class="col-sm-6">
+                    <div class="input-group">
+                        <input class="form-control" type="text" datepicker-options="datePickerOptions" ng-model="application.dateOfEntry" ng-focus="dateOfEntryOpen = !dateOfEntryOpen" is-open="dateOfEntryOpen" ng-required="true" close-text="Close" alt-input-formats="altInputFormats"></input>
+                        <span class="input-group-btn">
+                              <button type="button" class="btn btn-default" ng-click="dateOfEntryOpen = !dateOfEntryOpen"><span class="glyphicon glyphicon-calendar"></span></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Ethnicity Details -->
+        <div class="form-horizontal col-md-6 col-sm-12">
+            <fieldset>
+                <legend>Ethnicity Details</legend>
+                <div>
+                    Please select which best describes your ethnic origin: (The college requires this information to monitor Applications with regard to its Equal Opportunities Policy)
+                </div>
+            </fieldset>
+
+            <div class="form-group">
+                <label for="resident" class="col-sm-6 control-label">Ethnicity</label>
+                <div class="col-sm-6">
+                    <ethnicity-selection class="form-control" ng-model="application.ethnicity"></ethnicity-selection>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="row" ng-show="false">
+        <div class="form-group col-sm-12">
+            <button type="submit" class="btn btn-primary" ng-click="save()">Save</button>
+            <button type="submit" class="btn btn-default" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+
+</form>

@@ -1,0 +1,30 @@
+repositories {
+	mavenLocal()
+	mavenCentral()
+	jcenter()
+}
+
+description = """Online Application System: API"""
+
+dependencies {
+    compile project(':oas-data')
+	
+	// Spring Framework / Spring Boot Starters
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-actuator'
+    compile 'org.springframework.boot:spring-boot-starter-security'
+    compile 'org.springframework.boot:spring-boot-starter-mail'
+    
+    // Spring Boot Dev Tools
+    compile 'org.springframework.boot:spring-boot-devtools'
+    
+    // Swagger Dependecies
+    compile 'io.springfox:springfox-swagger2:2.4.0'
+    compile 'io.springfox:springfox-swagger-ui:2.4.0'
+    
+    // Model Mapper Library
+    compile 'org.modelmapper:modelmapper:1.1.2' 
+    
+    // Spring Testing
+    compile 'org.springframework.boot:spring-boot-starter-test'
+}

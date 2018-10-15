@@ -1,0 +1,18 @@
+K 10
+svn:ignore
+V 139
+.settings
+.project
+.classpath
+.gradle
+build
+bin
+node_modules
+bower_components
+yarn.lock
+package-lock.json
+application-dev.yml
+*.pid
+*.port
+
+END
