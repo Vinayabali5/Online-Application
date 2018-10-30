@@ -16,12 +16,6 @@ import javax.persistence.Table
 import uk.ac.reigate.oas.domain.institution.AvailableCourse
 import uk.ac.reigate.oas.domain.institution.Institution
 
-/**
- * This data entity is used to store the submissions of application to institutions.
- * 
- * @author Michael Horgan
- *
- */
 @Entity
 @Table(name="submission")
 @AttributeOverrides([
